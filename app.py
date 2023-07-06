@@ -27,10 +27,6 @@ st.markdown("The cost of precious metals between 2018 and 2021")
 # Display dropdown for metal selection
 metal = st.selectbox("Metal", options=data.columns[1:], index=0)
 
-# # Display date range selector
-# start_date = st.date_input("Start Date", value=data["DateTime"].min().dt.date())
-# end_date = st.date_input("End Date", value=data["DateTime"].max().dt.date())
-
 # Display date range selector
 start_date = st.date_input("Start Date", value=data["DateTime"].min())
 end_date = st.date_input("End Date", value=data["DateTime"].max())
