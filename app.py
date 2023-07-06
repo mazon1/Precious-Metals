@@ -28,8 +28,8 @@ st.markdown("The cost of precious metals between 2018 and 2021")
 metal = st.selectbox("Metal", options=data.columns[1:], index=0)
 
 # Display date range selector
-start_date = st.date_input("Start Date", value=data["DateTime"].min().date())
-end_date = st.date_input("End Date", value=data["DateTime"].max().date())
+start_date = st.date_input("Start Date", value=data["DateTime"].min().dt.date())
+end_date = st.date_input("End Date", value=data["DateTime"].max().dt.date())
 
 # Filter the data based on the selected metal and date range
 filtered_data = data.loc[(data["DateTime"] >= start_date) & (data["DateTime"] <= end_date)]
