@@ -2,9 +2,14 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+# # Read in the data
+# data = pd.read_csv("precious_metals_prices_2018_2021.csv")
+# data["DateTime"] = pd.to_datetime(data["DateTime"], format="%Y-%m-%d")
+
 # Read in the data
 data = pd.read_csv("precious_metals_prices_2018_2021.csv")
-data["DateTime"] = pd.to_datetime(data["DateTime"], format="%Y-%m-%d")
+data["DateTime"] = pd.to_datetime(data["DateTime"], format="%Y-%m-%d %H:%M:%S").dt.date
+
 
 # Create a plotly plot
 fig = px.line(
